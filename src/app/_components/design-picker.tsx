@@ -18,7 +18,7 @@ export function DesignPicker() {
   const errors = searchParams.get("errors")?.toString();
   return (
     <div className="flex flex-col space-y-4">
-      <h2 className="text-xl font-bold">ნაბიჯი 1: აირჩიე დიზაინი</h2>
+      <h2 className="text-2xl font-bold">ნაბიჯი 1: აირჩიე დიზაინი</h2>
       <div className="grid grid-cols-3 gap-4">
         {options.map((option) => {
           return (
@@ -50,14 +50,14 @@ export function DesignPicker() {
               />
               <Image
                 alt={option.alt}
-                className="h-32 w-full rounded-lg object-cover shadow-md"
-                height="200"
+                className="h-auto w-full rounded-lg object-cover shadow-md"
+                height="183"
+                width="275"
                 src={option.src}
                 style={{
-                  aspectRatio: "200/200",
+                  aspectRatio: "275/183",
                   objectFit: "cover",
                 }}
-                width="200"
               />
             </label>
           );

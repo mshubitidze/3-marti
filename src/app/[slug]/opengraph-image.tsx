@@ -32,7 +32,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           src={`${getBaseUrl()}/${data?.design}.png`}
           alt={data?.design}
         />
-        <p>{data?.message}</p>
+        <p tw="rounded text-center mx-10 p-5 bg-black/50">{data?.message}</p>
       </div>
     ),
     {

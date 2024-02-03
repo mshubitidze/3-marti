@@ -9,12 +9,12 @@ export async function RenderDesign({ slug }: { slug: string }) {
   const url = `${getBaseUrl()}/${slug}`;
   const src = `${url}/opengraph-image`;
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6">
       <div className="relative">
         <img
           width={1200}
           height={630}
-          className="border"
+          className="rounded-md border"
           src={src}
           alt="image"
         />

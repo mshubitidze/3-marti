@@ -21,11 +21,11 @@ export function MessageInput() {
           defaultValue={decodeURIComponent(
             searchParams.get("message")?.toString() ?? "",
           )}
-          placeholder="Enter your message here"
+          placeholder="შეიყვანე მილოცვის მესიჯი"
           name="message"
         />
         {errors ? (
-          <p className="text-destructive text-sm">
+          <p className="text-sm text-destructive">
             {
               (JSON.parse(decodeURIComponent(errors)) as Record<string, string>)
                 .message

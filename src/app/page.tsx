@@ -50,7 +50,7 @@ export default async function IndexPage({
             <form action={handleSubmit} className="space-y-6">
               <DesignPicker />
               <MessageInput />
-              <Button type="submit">Generate</Button>
+              <Button type="submit">შექმნა</Button>
             </form>
           )}
         </div>
