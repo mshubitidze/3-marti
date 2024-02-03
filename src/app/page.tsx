@@ -7,6 +7,7 @@ import { RenderDesign } from "./_components/render";
 import { ZodError } from "zod";
 import { DesignPicker } from "./_components/design-picker";
 import { MessageInput } from "./_components/message-input";
+import { nanoid } from "nanoid";
 
 export default async function IndexPage({
   searchParams: { slug },
@@ -21,7 +22,7 @@ export default async function IndexPage({
     const design = fd.get("design")?.toString();
     const message = fd.get("message")?.toString();
     try {
-      const slug = crypto.randomUUID();
+      const slug = nanoid(10);
       const parsed = messagesInsertSchema.parse({
         design,
         message,
