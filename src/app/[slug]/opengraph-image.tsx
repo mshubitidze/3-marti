@@ -20,7 +20,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
 
   return new ImageResponse(
     (
-      <div tw="flex w-full h-full text-white items-center justify-end text-3xl flex-col">
+      <div tw="flex w-full h-full text-white items-center justify-end text-5xl flex-col">
         <img
           tw="absolute left-0 top-0"
           src={`${getBaseUrl()}/${data?.design}.png`}
