@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getBaseUrl } from "@/lib/utils";
 import { getOg } from "./actions";
+import { unstable_noStore } from "next/cache";
 
 export const alt = "alt text";
 export const size = {
@@ -13,6 +14,7 @@ export const runtime = "edge";
 export const contentType = "image/png";
 
 export default async function Image({ params }: { params: { slug: string } }) {
+  unstable_noStore();
   const data = await getOg(params.slug);
   const tbcXBlack = fetch(new URL("./TBCX-Black.ttf", import.meta.url)).then(
     (res) => res.arrayBuffer(),
