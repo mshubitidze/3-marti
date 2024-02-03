@@ -1,7 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { ImageDownloadButton } from "./download-button";
 import { cn, getBaseUrl } from "@/lib/utils";
-import Image from "next/image";
 import Link from "next/link";
 import { RefreshCw, XIcon } from "lucide-react";
 import { CopyInput } from "./copy-input";
@@ -12,13 +11,12 @@ export async function RenderDesign({ slug }: { slug: string }) {
   return (
     <div className="flex flex-col gap-4">
       <div className="relative">
-        <Image
+        <img
           width={1200}
           height={630}
           className="border"
           src={src}
           alt="image"
-          priority
         />
         <Link
           className={cn(
