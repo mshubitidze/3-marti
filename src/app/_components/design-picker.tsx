@@ -6,7 +6,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const options = [
   { name: "design", value: "white", src: "/white.png", alt: "White Design" },
-  { name: "design", value: "vlue", src: "/blue.png", alt: "Blue Design" },
+  { name: "design", value: "blue", src: "/blue.png", alt: "Blue Design" },
   { name: "design", value: "red", src: "/red.png", alt: "Red Design" },
 ];
 
