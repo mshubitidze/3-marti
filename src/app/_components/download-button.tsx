@@ -21,7 +21,7 @@ export function ImageDownloadButton({
     <Button
       size="icon"
       variant="outline"
-      className="absolute right-2 top-2 md:right-5 md:top-14"
+      className="top-13 absolute right-2 md:right-5 md:top-16"
       onClick={handleDownload}
     >
       <DownloadIcon />

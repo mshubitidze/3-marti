@@ -20,7 +20,7 @@ export async function RenderDesign({ slug }: { slug: string }) {
         <Link
           className={cn(
             buttonVariants({ size: "icon", variant: "outline" }),
-            "absolute right-5 top-5 rounded-full",
+            "absolute right-2 top-2 rounded-full md:right-5 md:top-5",
           )}
           href="/"
         >
