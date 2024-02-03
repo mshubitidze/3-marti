@@ -21,7 +21,7 @@ export default async function Page({ params: { slug } }: PageProps) {
           <img
             className="rounded-md border"
             width={1200}
-            height={675}
+            height={630}
             src={createImageSrc(slug)}
             alt="Congratulations Image"
           />

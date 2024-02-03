@@ -63,7 +63,7 @@ export function DesignPicker() {
                   alt={option.alt}
                   className="rounded-lg object-cover"
                   width={1200}
-                  height={675}
+                  height={800}
                   src={option.src}
                 />
               </label>
