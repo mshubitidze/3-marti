@@ -1,8 +1,6 @@
-import { db } from "@/server/db";
-import { messages } from "@/server/db/schema";
 import { ImageResponse } from "next/og";
-import { eq } from "drizzle-orm";
 import { getBaseUrl } from "@/lib/utils";
+import { getOg } from "./actions";
 
 export const alt = "alt text";
 export const size = {
@@ -15,11 +13,7 @@ export const runtime = "edge";
 export const contentType = "image/png";
 
 export default async function Image({ params }: { params: { slug: string } }) {
-  const [data] = await db
-    .select()
-    .from(messages)
-    .where(eq(messages.slug, params.slug));
-
+  const data = await getOg(params.slug);
   const tbcXBlack = fetch(new URL("./TBCX-Black.ttf", import.meta.url)).then(
     (res) => res.arrayBuffer(),
   );
