@@ -8,8 +8,25 @@ import { CopyInput } from "./copy-input";
 export async function RenderDesign({ slug }: { slug: string }) {
   const url = `${getBaseUrl()}/${slug}`;
   return (
-    <div className="flex flex-col items-center gap-6">
+    <div className="flex flex-col items-center gap-2">
       <CopyInput value={url} />
+      <a href="fb-messenger://share/?link= https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fsharing%2Freference%2Fsend-dialog&app_id=123456789">
+        Send In Messenger
+      </a>
+      <div
+        className="fb-share-button"
+        data-href="https://developers.facebook.com/docs/plugins/"
+        data-layout=""
+        data-size=""
+      >
+        <a
+          target="_blank"
+          href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+          className="fb-xfbml-parse-ignore"
+        >
+          Share
+        </a>
+      </div>
       <div className="relative">
         <img
           className="rounded-md border"
@@ -29,7 +46,7 @@ export async function RenderDesign({ slug }: { slug: string }) {
         </Link>
         <ImageDownloadButton imageDataUrl={createImageSrc(slug)} />
       </div>
-      <Link className={buttonVariants()} href="/">
+      <Link className={cn(buttonVariants(), "mt-2")} href="/">
         შექმენი თავიდან <RefreshCw className="ml-1 h-3 w-4" />
       </Link>
     </div>

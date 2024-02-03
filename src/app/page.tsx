@@ -16,11 +16,11 @@ export default async function IndexPage({
 }) {
   return (
     <main className="flex min-h-[calc(100dvh-11rem)] flex-col justify-around">
-      <div className="container mx-auto -mt-24 h-full md:-mt-16">
+      <div className="container mx-auto h-full">
         {slug ? (
           <RenderDesign slug={slug} />
         ) : (
-          <form action={handleSubmit} className="space-y-6">
+          <form action={handleSubmit} className="mb-10 space-y-6">
             <DesignPicker />
             <MessageInput />
             <PendingButton />
