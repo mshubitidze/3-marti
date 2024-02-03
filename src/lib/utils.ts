@@ -19,6 +19,7 @@ export function createUrl(
 
 export function getBaseUrl() {
   if (typeof window !== "undefined") return "";
+  if (process.env.PROD_URL) return `https://${process.env.PROD_URL}`;
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
   return "http://localhost:3000";
 }
