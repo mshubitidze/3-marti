@@ -27,6 +27,7 @@
     "clsx": "^2.1.0",
     "drizzle-orm": "^0.29.3",
     "embla-carousel-react": "^8.0.0-rc22",
+    "framer-motion": "^11.0.3",
     "lucide-react": "latest",
     "nanoid": "^5.0.5",
     "next": "^14.0.4",

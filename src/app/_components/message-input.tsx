@@ -18,7 +18,7 @@ export function MessageInput() {
   return (
     <div className="flex flex-col space-y-4">
       <h2
-        className={cn("text-2xl font-bold", {
+        className={cn("text-xl font-bold md:text-2xl", {
           "text-destructive": !!errorMessage,
         })}
       >
@@ -26,6 +26,9 @@ export function MessageInput() {
       </h2>
       <div className="flex flex-col gap-2">
         <Input
+          className={cn({
+            "border-destructive": !!errorMessage,
+          })}
           onChange={(e) =>
             handleParamChange(e, searchParams, router, pathname, "message")
           }

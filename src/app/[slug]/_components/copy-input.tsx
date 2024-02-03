@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Check, Clipboard } from "lucide-react";
+import { Clipboard, ClipboardCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function CopyInput({ value }: { value: string }) {
@@ -28,7 +28,7 @@ export function CopyInput({ value }: { value: string }) {
         }}
       >
         {copied ? (
-          <Check className="h-4 w-4" />
+          <ClipboardCheck className="h-4 w-4" />
         ) : (
           <Clipboard className="h-4 w-4" />
         )}

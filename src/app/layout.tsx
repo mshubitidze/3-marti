@@ -28,8 +28,8 @@ export default function RootLayout({
         <TRPCReactProvider>
           <ThemeProvider attribute="class" defaultTheme="system">
             <header className="top-0 z-40 w-full border-b">
-              <div className="container flex h-20 items-center justify-between">
-                <Link href="/" className="flex items-center text-2xl font-bold">
+              <div className="container flex h-16 items-center justify-between">
+                <Link href="/" className="flex items-center text-xl font-bold">
                   <CircleDotDashed className="mr-2" /> ლოგო
                 </Link>
                 <ModeToggle />
@@ -37,7 +37,7 @@ export default function RootLayout({
             </header>
             {children}
             <footer className="bottom-0 z-40 w-full border-t text-xs">
-              <div className="container flex h-20 items-center">
+              <div className="container flex h-16 items-center">
                 <p>© 2024 კომპანია. ყველა უფლება დაცულია.</p>
               </div>
             </footer>

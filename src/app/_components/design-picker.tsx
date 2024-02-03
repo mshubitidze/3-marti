@@ -24,7 +24,7 @@ export function DesignPicker() {
   return (
     <div className="flex flex-col space-y-4">
       <h2
-        className={cn("text-2xl font-bold", {
+        className={cn("text-xl font-bold md:text-2xl", {
           "text-destructive": isError,
         })}
       >
@@ -36,15 +36,15 @@ export function DesignPicker() {
             return (
               <label
                 className={cn(
-                  "relative cursor-pointer rounded-lg transition-all has-[:checked]:scale-105 has-[:checked]:ring has-[:checked]:ring-ring",
+                  "relative cursor-pointer rounded-lg border transition-all has-[:checked]:scale-[1.02] has-[:checked]:border-primary",
                   {
-                    "ring ring-destructive": isError,
+                    "border-destructive": isError,
                   },
                 )}
                 key={option.value}
               >
                 <input
-                  className="absolute left-2 top-2 md:left-5 md:top-5"
+                  className="absolute right-2 top-2 md:right-5 md:top-5 md:h-6 md:w-6"
                   name={option.name}
                   type="radio"
                   value={option.value}

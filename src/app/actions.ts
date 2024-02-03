@@ -18,7 +18,7 @@ export async function handleSubmit(fd: FormData) {
       slug,
     });
     await db.insert(messages).values({ ...parsed });
-    redirect(`/?slug=${slug}`);
+    redirect(`/${slug}`);
   } catch (err) {
     if (isRedirectError(err)) {
       throw err;
