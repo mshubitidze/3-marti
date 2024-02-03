@@ -4,14 +4,13 @@ import { cn, createImageSrc, getBaseUrl } from "@/lib/utils";
 import Link from "next/link";
 import { RefreshCw, XIcon } from "lucide-react";
 import { CopyInput } from "./copy-input";
-import Image from "next/image";
 
 export async function RenderDesign({ slug }: { slug: string }) {
   const url = `${getBaseUrl()}/${slug}`;
   return (
     <div className="flex flex-col items-center gap-6">
       <div className="relative">
-        <Image
+        <img
           className="rounded-md border"
           width={1200}
           height={675}
