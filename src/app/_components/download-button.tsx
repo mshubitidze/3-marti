@@ -21,10 +21,10 @@ export function ImageDownloadButton({
     <Button
       size="icon"
       variant="outline"
-      className="top-13 absolute right-2 md:right-5 md:top-16"
+      className="absolute right-3 top-[52px] md:right-5 md:top-[82px] md:min-h-14 md:min-w-14"
       onClick={handleDownload}
     >
-      <DownloadIcon />
+      <DownloadIcon className="h-4 w-4 md:h-8 md:w-8" />
     </Button>
   );
 }

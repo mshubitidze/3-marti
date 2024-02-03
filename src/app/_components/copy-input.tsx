@@ -19,6 +19,7 @@ export function CopyInput({ value }: { value: string }) {
       <Input readOnly value={value} />
       <Button
         size="icon"
+        className="min-h-9 min-w-9"
         aria-disabled={copied}
         disabled={copied}
         onClick={() => {
