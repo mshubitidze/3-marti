@@ -26,13 +26,15 @@ export default async function Image({ params }: { params: { slug: string } }) {
 
   return new ImageResponse(
     (
-      <div tw="flex w-full h-full text-white items-center justify-center text-6xl flex-col">
+      <div tw="flex w-full h-full text-white items-center justify-end text-3xl flex-col">
         <img
           tw="absolute left-0 top-0"
           src={`${getBaseUrl()}/${data?.design}.png`}
           alt={data?.design}
         />
-        <p tw="rounded text-center mx-10 p-5 bg-black/50">{data?.message}</p>
+        <div tw="flex items-center rounded-lg m-10 p-5 bg-black/50 text-center">
+          {data?.message}
+        </div>
       </div>
     ),
     {

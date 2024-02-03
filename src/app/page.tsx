@@ -2,18 +2,20 @@ import { redirect } from "next/navigation";
 import { messages, messagesInsertSchema } from "@/server/db/schema";
 import { db } from "@/server/db";
 import { isRedirectError } from "next/dist/client/components/redirect";
-import { Button } from "@/components/ui/button";
-import { RenderDesign } from "./_components/render";
+import { RenderDesign } from "./_components/render-design";
 import { ZodError } from "zod";
 import { DesignPicker } from "./_components/design-picker";
 import { MessageInput } from "./_components/message-input";
 import { nanoid } from "nanoid";
+import { PendingButton } from "./_components/pending-button";
 
 export default async function IndexPage({
   searchParams: { slug },
 }: {
   searchParams: {
     slug: string | undefined;
+    design: string | undefined;
+    message: string | undefined;
     errors: string | undefined;
   };
 }) {
@@ -41,21 +43,20 @@ export default async function IndexPage({
       }
     }
   }
+
   return (
-    <div className="flex min-h-[calc(100vh-10rem)] flex-col">
-      <main className="mx-auto mt-6 w-full max-w-4xl flex-1 p-4 md:mt-16">
-        <div className="mb-5">
-          {slug ? (
-            <RenderDesign slug={slug} />
-          ) : (
-            <form action={handleSubmit} className="space-y-6">
-              <DesignPicker />
-              <MessageInput />
-              <Button type="submit">შექმნა</Button>
-            </form>
-          )}
-        </div>
-      </main>
-    </div>
+    <main className="flex min-h-[calc(100dvh-11rem)] flex-col justify-around">
+      <div className="container mx-auto -mt-24 h-full md:-mt-16">
+        {slug ? (
+          <RenderDesign slug={slug} />
+        ) : (
+          <form action={handleSubmit} className="space-y-6">
+            <DesignPicker />
+            <MessageInput />
+            <PendingButton />
+          </form>
+        )}
+      </div>
+    </main>
   );
 }

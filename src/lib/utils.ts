@@ -54,3 +54,7 @@ export function handleParamChange(
   }
   router.replace(`${pathname}?${params.toString()}`, { scroll: false });
 }
+
+export function createImageSrc(slug: string) {
+  return `${getBaseUrl()}/${slug}/opengraph-image`;
+}

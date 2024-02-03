@@ -2,6 +2,10 @@ import { tbcX } from "@/config/font";
 import "@/styles/globals.css";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import { ThemeProvider } from "@/components/theme-provider";
+import { ModeToggle } from "@/components/mode-toggle";
+import { CircleDotDashed } from "lucide-react";
+import Link from "next/link";
 
 export const metadata = {
   title: "Create T3 App",
@@ -16,23 +20,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${tbcX.className} min-h-screen`}>
+      <body
+        className={`font-sans ${tbcX.className} min-h-[100dvh] antialiased`}
+      >
         <TRPCReactProvider>
-          <header className="top-0 z-40 w-full border-b">
-            <div className="container flex h-20 items-center justify-between space-x-4 sm:space-x-0">
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                logo
-              </h1>
-            </div>
-          </header>
-          {children}
-          <footer className="bottom-0 z-40 w-full border-t text-xs">
-            <div className="container flex flex-col gap-12 px-4 pb-8 pt-12 sm:px-11 lg:flex-row-reverse lg:items-center lg:justify-between lg:p-7">
-              <p className="text-gray-900 dark:text-gray-100">
-                © 2024 company. All rights reserved.
-              </p>
-            </div>
-          </footer>
+          <ThemeProvider attribute="class" defaultTheme="system">
+            <header className="top-0 z-40 w-full border-b">
+              <div className="container flex h-20 items-center justify-between">
+                <Link href="/" className="flex items-center text-2xl font-bold">
+                  <CircleDotDashed className="mr-2" /> ლოგო
+                </Link>
+                <ModeToggle />
+              </div>
+            </header>
+            {children}
+            <footer className="bottom-0 z-40 w-full border-t text-xs">
+              <div className="container flex h-20 items-center">
+                <p>© 2024 კომპანია. ყველა უფლება დაცულია.</p>
+              </div>
+            </footer>
+          </ThemeProvider>
         </TRPCReactProvider>
       </body>
     </html>
