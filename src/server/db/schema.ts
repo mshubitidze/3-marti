@@ -13,7 +13,7 @@ export const createTable = mysqlTableCreator((name) => `3-marti_${name}`);
 export const messages = createTable("messages", {
   id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
   slug: varchar("slug", { length: 256 }).notNull(),
-  design: mysqlEnum("design", ["1", "2", "3"]).notNull(),
+  design: mysqlEnum("design", ["white", "blue", "red"]).notNull(),
   message: varchar("message", { length: 256 }).notNull(),
   createdAt: timestamp("created_at")
     .default(sql`CURRENT_TIMESTAMP`)

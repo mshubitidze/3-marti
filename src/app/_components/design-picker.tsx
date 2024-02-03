@@ -5,9 +5,9 @@ import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const options = [
-  { name: "design", value: "1", src: "/1.png", alt: "Design 1" },
-  { name: "design", value: "2", src: "/2.png", alt: "Design 2" },
-  { name: "design", value: "3", src: "/3.png", alt: "Design 3" },
+  { name: "design", value: "white", src: "/white.png", alt: "White Design" },
+  { name: "design", value: "vlue", src: "/blue.png", alt: "Blue Design" },
+  { name: "design", value: "red", src: "/red.png", alt: "Red Design" },
 ];
 
 export function DesignPicker() {
