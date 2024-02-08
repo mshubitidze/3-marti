@@ -7,7 +7,7 @@ import { handleSubmit } from "./actions";
 export default async function IndexPage() {
   return (
     <main className="container mx-auto flex min-h-[calc(100svh-9rem)] flex-col justify-around">
-      <form action={handleSubmit} className="-mt-8 space-y-6">
+      <form action={handleSubmit} className="space-y-6">
         <Suspense fallback={null}>
           <DesignPicker />
         </Suspense>

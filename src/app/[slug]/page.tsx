@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { CopyInput } from "./_components/copy-input";
 import { ImageDownloadButton } from "./_components/download-button";
 import { Share } from "./_components/share";
+import { getOg } from "./actions";
 
 type PageProps = {
   params: {
@@ -13,12 +14,17 @@ type PageProps = {
 };
 
 export default async function Page({ params: { slug } }: PageProps) {
+  const data = await getOg(slug);
   const url = `${getBaseUrl()}/${slug}`;
   return (
     <main className="container mx-auto flex min-h-[calc(100dvh-9rem)] flex-col justify-around">
-      <div className="-mt-8 flex flex-col items-center gap-2">
+      <div className="flex flex-col items-center gap-2">
         <CopyInput value={url} />
-        <Share title={slug} text={slug} url={url} />
+        <Share
+          title={"3 მარტი"}
+          text={data?.message ?? "მისალოცი ბარათი"}
+          url={url}
+        />
         <div className="relative mx-auto h-auto w-full max-w-4xl">
           <img
             className="rounded-md border"
