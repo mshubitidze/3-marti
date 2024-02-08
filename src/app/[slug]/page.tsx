@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CopyInput } from "./_components/copy-input";
 import { ImageDownloadButton } from "./_components/download-button";
+import { Share } from "./_components/share";
 
 type PageProps = {
   params: {
@@ -17,6 +18,7 @@ export default async function Page({ params: { slug } }: PageProps) {
     <main className="container mx-auto flex min-h-[calc(100dvh-9rem)] flex-col justify-around">
       <div className="-mt-8 flex flex-col items-center gap-2">
         <CopyInput value={url} />
+        <Share title={slug} text={slug} url={url} />
         <div className="relative mx-auto h-auto w-full max-w-4xl">
           <img
             className="rounded-md border"

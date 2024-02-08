@@ -24,9 +24,12 @@ export async function handleSubmit(fd: FormData) {
       throw err;
     }
     if (err instanceof ZodError) {
-      redirect(
-        `/?errors=${encodeURIComponent(JSON.stringify(err.flatten().fieldErrors))}`,
+      const params = new URLSearchParams();
+      params.set(
+        "errors",
+        encodeURIComponent(JSON.stringify(err.flatten().fieldErrors)),
       );
+      redirect(`/?${params.toString()}`);
     }
   }
 }

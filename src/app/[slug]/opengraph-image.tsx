@@ -3,7 +3,7 @@ import { getBaseUrl } from "@/lib/utils";
 import { getOg } from "./actions";
 import { unstable_noStore } from "next/cache";
 
-export const alt = "alt text";
+export const alt = "მისალოცი ბარათი";
 export const size = {
   width: 1200,
   height: 630,
