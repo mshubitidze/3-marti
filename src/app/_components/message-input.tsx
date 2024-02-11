@@ -4,8 +4,6 @@ import { Input } from "@/components/ui/input";
 import { cn, handleParamChange } from "@/lib/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-// const bannedWords = ["ინჰაუსიზაცია"];
-
 export function MessageInput() {
   const router = useRouter();
   const pathname = usePathname();

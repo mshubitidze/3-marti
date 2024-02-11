@@ -16,7 +16,9 @@ export default async function IndexPage({
   return (
     <main className="container mx-auto flex min-h-[calc(100svh-9rem)] flex-col justify-center gap-10">
       {limit ? (
-        <p className="text-center text-xl text-destructive">{limit}</p>
+        <p className="text-center text-xl text-destructive">
+          გთხოვ, მოიცადო 5 წუთი ახალი მისალოცი ბარათის დაგენერირებამდე
+        </p>
       ) : null}
       <form action={handleSubmit} className="space-y-6">
         <Suspense fallback={null}>

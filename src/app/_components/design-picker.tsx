@@ -5,9 +5,9 @@ import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const options = [
-  { name: "design", value: "white", src: "/white.png", alt: "White Design" },
-  { name: "design", value: "blue", src: "/blue.png", alt: "Blue Design" },
-  { name: "design", value: "red", src: "/red.png", alt: "Red Design" },
+  { value: "white", src: "/white.png", alt: "White Design" },
+  { value: "blue", src: "/blue.png", alt: "Blue Design" },
+  { value: "red", src: "/red.png", alt: "Red Design" },
 ];
 
 export function DesignPicker() {
@@ -45,7 +45,7 @@ export function DesignPicker() {
               >
                 <input
                   className="absolute right-2 top-2 md:right-5 md:top-5 md:h-6 md:w-6"
-                  name={option.name}
+                  name="design"
                   type="radio"
                   value={option.value}
                   defaultChecked={searchParams.get("design") === option.value}

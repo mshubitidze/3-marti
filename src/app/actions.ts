@@ -20,17 +20,17 @@ export async function handleSubmit(fd: FormData) {
   const design = fd.get("design")?.toString();
   const message = fd.get("message")?.toString();
   try {
-    const ip = headers().get("x-forwarded-for") ?? "127.0.0.1";
-    const allowed = await ratelimiter.limit(ip);
-    if (!allowed.success) {
-      redirect(`/?limit=${allowed.reset}`);
-    }
     const slug = nanoid(10);
     const parsed = messagesInsertSchema.parse({
       design,
       message,
       slug,
     });
+    const ip = headers().get("x-forwarded-for") ?? "127.0.0.1";
+    const allowed = await ratelimiter.limit(ip);
+    if (!allowed.success) {
+      redirect("/?limit=1");
+    }
     await db.insert(messages).values({ ...parsed });
     redirect(`/${slug}`);
   } catch (err) {
