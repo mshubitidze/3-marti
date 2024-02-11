@@ -4,9 +4,20 @@ import { MessageInput } from "./_components/message-input";
 import { PendingButton } from "./_components/pending-button";
 import { handleSubmit } from "./actions";
 
-export default async function IndexPage() {
+type IndexPageProps = {
+  searchParams: {
+    limit: "1" | undefined;
+  };
+};
+
+export default async function IndexPage({
+  searchParams: { limit },
+}: IndexPageProps) {
   return (
-    <main className="container mx-auto flex min-h-[calc(100svh-9rem)] flex-col justify-around">
+    <main className="container mx-auto flex min-h-[calc(100svh-9rem)] flex-col justify-center gap-10">
+      {limit ? (
+        <p className="text-center text-xl text-destructive">{limit}</p>
+      ) : null}
       <form action={handleSubmit} className="space-y-6">
         <Suspense fallback={null}>
           <DesignPicker />
