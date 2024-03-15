@@ -1,5 +1,5 @@
 import { buttonVariants } from "@/components/ui/button";
-import { cn, createImageSrc, getBaseUrl } from "@/lib/utils";
+import { cn, createOgImageSrc, getBaseUrl } from "@/lib/utils";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CopyInput } from "./_components/copy-input";
@@ -30,10 +30,13 @@ export default async function Page({ params: { slug } }: PageProps) {
             className="rounded-md border"
             width={1200}
             height={630}
-            src={createImageSrc(slug)}
+            src={createOgImageSrc(slug)}
             alt="Congratulations Image"
           />
-          <ImageDownloadButton imageDataUrl={createImageSrc(slug)} />
+          <ImageDownloadButton
+            imageDataUrl={createOgImageSrc(slug)}
+            name={data?.message}
+          />
         </div>
         <Link className={cn(buttonVariants(), "mt-2")} href="/">
           შექმენი თავიდან <ArrowRight className="ml-2 h-4 w-4" />

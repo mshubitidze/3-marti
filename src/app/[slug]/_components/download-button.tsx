@@ -5,17 +5,21 @@ import { DownloadIcon } from "lucide-react";
 
 export function ImageDownloadButton({
   imageDataUrl,
+  name,
 }: {
   imageDataUrl: string;
+  name?: string;
 }) {
-  const handleDownload = () => {
+  function handleDownload() {
     const link = document.createElement("a");
     link.href = imageDataUrl;
-    link.download = "generated_image.png";
+    link.download = name
+      ? name.trim().split(" ").join("-") + ".png"
+      : "congratulations.png";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  };
+  }
 
   return (
     <Button

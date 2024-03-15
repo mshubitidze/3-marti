@@ -7,12 +7,13 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { CircleDotDashed } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { getBaseUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "3 მარტი",
   description: "შექმენი მისალოცი ბარათი",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
-  metadataBase: new URL("https://3-marti.vercel.app"),
+  metadataBase: new URL(getBaseUrl()),
 };
 
 export default function RootLayout({
